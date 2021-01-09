@@ -1,3 +1,4 @@
+// Board columns are populated with the name of their color to decide what color to make the HTML column background
 let board = [
   ['', '', '', '', '', ''],
   ['', '', '', '', '', ''],
