@@ -8,7 +8,7 @@ let board = [
   ['', '', '', '', '', ''],
   ['', '', '', '', '', ''],
   ['', '', '', '', '', ''],
-  ['', '', '', '', '', ''],
+  ['red', '', '', '', '', ''],
   ['', '', '', '', '', '']
 ]
 
@@ -18,7 +18,14 @@ let ties = 0
 
 // Iterates the board and renders each piece and their associated color
 function render_board() {
-
+    for(let i = 0; i < 7; i++){
+        for(let j = 0; j < 6; j++)
+        {
+            let chip = document.getElementById(`chip-${i}-${j}`).style.backgroundcolor = board[i][j]
+            
+        }
+    }
+    
 }
 
 // Randomly chooses a space
