@@ -24,10 +24,7 @@ function render_board() {
 // Randomly chooses a space
 function ai_move() {}
 
-function user_move(x, y) {}
-
 function reset() {
-  
 }
 
 /**
@@ -41,11 +38,20 @@ function detect_wlt() {}
 
 /**
  * Checks if the row is full, if so notify the user
- * If row is not occupied, the next available column in that row is passed to user_move fn call
+ * If row is not occupied, get_available_space is called for that row
+ * whose results are used to change the board at that index to user_color
  * @param {*} x 
  * @param {*} y 
  */
-function choose (x, y) {}
+function choose (x) {}
 
 // Updates the HTML with the new score
 function update_score () {}
+
+// Checks if a column is full
+function check_col_full (col) {
+
+}
+
+// Get the index of the correct available spot in a specific row
+function get_available_space(col) {}
