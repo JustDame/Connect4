@@ -1,4 +1,7 @@
 // Board columns are populated with the name of their color to decide what color to make the HTML column background
+let ai_color = 'yellow'
+let user_color = 'red'
+
 let board = [
   ['', '', '', '', '', ''],
   ['', '', '', '', '', ''],
@@ -21,9 +24,11 @@ function render_board() {
 // Randomly chooses a space
 function ai_move() {}
 
-function user_move() {}
+function user_move(x, y) {}
 
-function reset() {}
+function reset() {
+  
+}
 
 /**
  * Because we are only checking horizontally for now
@@ -35,10 +40,8 @@ function reset() {}
 function detect_wlt() {}
 
 /**
- * Checks if the tile is occupied, if so notify the user
- * If tile is not occupied, the column is set with the name of the user's color
- * Then executes the wlt detection and check results to either execute the ai's move
- * or update the score
+ * Checks if the row is full, if so notify the user
+ * If row is not occupied, the next available column in that row is passed to user_move fn call
  * @param {*} x 
  * @param {*} y 
  */
