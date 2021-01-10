@@ -29,7 +29,40 @@ function render_board() {
 }
 
 // Randomly chooses a space
-function ai_move() {}
+function ai_move() {
+
+    let a = get_available_space(x);
+    let b = check_col_full (x);
+
+    if (b == true){
+    
+    } else {
+      board[a][x] = ai_color;
+      render_board();
+      const outcome = detect_wlt(board);
+
+        if(outcome == 'continue'){
+          ai_turn();
+        }else{
+          alert(outcome);
+
+          switch(outcome){
+        case 'loss':
+            losses++;
+            break;
+        case 'tie':
+            ties++;
+            break;
+        case 'wins':
+            wins++;
+            break;
+          }
+          update_score ()
+        }
+    }
+
+   
+}
 
 function reset() {
     wins = 0   
@@ -62,12 +95,44 @@ function detect_wlt() {}
  * If row is not occupied, get_available_space is called for that row
  * whose results are used to change the board at that index to user_color
  * @param {*} x 
- * @param {*} y 
  */
-function choose (x) {}
+function user_move(x) 
+{
+    let a = get_available_space(x);
+    let b = check_col_full (x);
+
+    if (b == true){
+      alert('Current column is full');
+    } else {
+      board[a][x] = user_color;
+      render_board();
+      const outcome = detect_wlt(board);
+
+        if(outcome == 'continue'){
+          ai_turn();
+        }else{
+          alert(outcome)
+          switch(outcome){
+        case 'win':
+            wins++;
+            break;
+        case 'tie':
+            ties++;
+            break;
+        case 'loss':
+            losses++;
+            break;
+          }
+          update_score ()
+        }
+    } 
+  
+}
+
 
 // Updates the HTML with the new score
 function update_score () {}
+
 
 // Checks if a column is full
 function check_col_full (col) {
@@ -91,4 +156,6 @@ function check_col_full (col) {
 }
 
 // Get the index of the correct available spot in a specific row
-function get_available_space(col) {}
+function get_available_space(col){
+
+}
