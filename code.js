@@ -21,7 +21,7 @@ function render_board() {
     for(let i = 0; i < 7; i++){
         for(let j = 0; j < 6; j++)
         {
-            let chip = document.getElementById(`chip-${i}-${j}`).style.backgroundcolor = board[i][j]
+            let chip = document.getElementById(`chip-${i}-${j}`).style.backgroundColor = board[i][j]
             
         }
     }
