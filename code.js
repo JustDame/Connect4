@@ -71,7 +71,23 @@ function update_score () {}
 
 // Checks if a column is full
 function check_col_full (col) {
-
+    let count = 0
+    for(let i = 0; i < 7; i++)
+    {
+        let spot = board[i][col]
+        if(spot === "red" || spot === "yellow")
+        {
+            count ++
+        }
+    
+    }
+    if(count == 6)
+    {
+        return true
+    }
+    else{
+        return false
+    }    
 }
 
 // Get the index of the correct available spot in a specific row
