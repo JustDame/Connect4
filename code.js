@@ -46,6 +46,9 @@ function ai_move() {
         case 'tie':
             ties++;
             break;
+        case 'wins':
+            wins++;
+            break;
           }
           update_score ()
         }
@@ -94,6 +97,9 @@ function user_move(x)
             break;
         case 'tie':
             ties++;
+            break;
+        case 'loss':
+            losses++;
             break;
           }
           update_score ()
