@@ -81,7 +81,7 @@ function check_col_full (col) {
         }
     
     }
-    if(count == 6)
+    if(count == 7)
     {
         return true
     }
