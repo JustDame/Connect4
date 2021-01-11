@@ -136,7 +136,7 @@ function user_move(x)
       const outcome = detect_wlt(board);
 
         if(outcome == 'continue'){
-          ai_turn();
+          ai_move();
         }else{
           alert(outcome)
           switch(outcome){
