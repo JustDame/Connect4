@@ -1,9 +1,47 @@
 .row .col {
-  border: 10px solid black;
+  border: 10px solid blue;
   height: 150px;
 }
 
 [id*="chip-"] {
   width: 50px;
   height: 50px;
+}
+
+.row {
+  margin-bottom: 0 !important;
+}
+
+#reset {
+  font-size: 20px;
+  margin-top: 30px;
+}
+.rest {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#quit {
+  margin-top: 30px;
+}
+.press {
+  font-size: 20px !important;
+}
+.wtl {
+  font-size: 40px;
+  text-align: center;
+}
+body {
+  background-color: #bbdefb;
+}
+
+h1 {
+  text-align: center;
+  font-family: cursive;
+  font-size: 80px !important;
+  margin-bottom: 80px !important;
+}
+
+.press:hover::after {
+  content: "...sore loser" !important;
 }
