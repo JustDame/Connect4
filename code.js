@@ -30,7 +30,7 @@ function render_board() {
 
 // Randomly chooses a space
 function ai_move() {
-
+    let x = Math.floor(Math.random() * Math.floor(6))
     let a = get_available_space(x);
     let b = check_col_full (x);
 
