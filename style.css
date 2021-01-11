@@ -1,4 +1,4 @@
-.row .col {
+.board .col {
   border: 10px solid blue;
   height: 150px;
 }
@@ -44,4 +44,11 @@ h1 {
 
 .press:hover::after {
   content: "...sore loser" !important;
+}
+
+.clickRow .col {
+  height: 70px;
+}
+.clickRow .col:hover {
+  background-color: cornsilk;
 }
