@@ -19,7 +19,7 @@ let ties = 0
 // Iterates the board and renders each piece and their associated color
 function render_board() {
     for(let i = 0; i < 7; i++){
-        for(let j = 0; j < 7; j++)
+        for(let j = 0; j < 6; j++)
         {
             let chip = document.getElementById(`chip-${i}-${j}`).style.backgroundColor = board[i][j]
             
@@ -30,7 +30,7 @@ function render_board() {
 
 // Randomly chooses a space
 function ai_move() {
-
+    let x = Math.floor(Math.random() * Math.floor(6))
     let a = get_available_space(x);
     let b = check_col_full (x);
 
@@ -39,12 +39,13 @@ function ai_move() {
     } else {
       board[a][x] = ai_color;
       render_board();
-      const outcome = detect_wlt(board);
+      const outcome = detect_wlt();
 
         if(outcome == 'continue'){
-          ai_turn();
+
         }else{
           alert(outcome);
+
 
           switch(outcome){
         case 'loss':
@@ -88,7 +89,33 @@ function reset() {
  * 
  * If 4 is reached, that color wins
  */
-function detect_wlt() {}
+function detect_wlt() {
+  for (let y = 0; y < board.length; y++) {    
+    let row = board[y]
+    let counts = row.reduce((acc, curr) => {
+      if (typeof acc[curr] === 'undefined') {
+        acc[curr] = 1
+        lastColor = curr
+      } else if (lastColor !== curr) {
+        acc[curr] = 0
+      } else {
+        acc[curr]++
+      }
+
+      return acc
+    }, { lastColor: '' })
+
+    if (counts[user_color] === 4) {
+      return 'win'
+    } else if (counts[ai_color] === 4) {
+      return 'loss'
+    } else {
+      continue;
+    }
+  }
+
+  return 'continue'
+}
 
 /**
  * Checks if the row is full, if so notify the user
@@ -109,7 +136,7 @@ function user_move(x)
       const outcome = detect_wlt(board);
 
         if(outcome == 'continue'){
-          ai_turn();
+          ai_move();
         }else{
           alert(outcome)
           switch(outcome){
@@ -157,5 +184,14 @@ function check_col_full (col) {
 
 // Get the index of the correct available spot in a specific row
 function get_available_space(col){
+  for (let y = 0; y < board.length; y++) {
+    let spot = board[y][col]
+    if (spot === '') {
+      continue;
+    } else {
+      return y - 1
+    }
+  }
 
+  return 6
 }
