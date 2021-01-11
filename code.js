@@ -184,5 +184,14 @@ function check_col_full (col) {
 
 // Get the index of the correct available spot in a specific row
 function get_available_space(col){
+  for (let y = 0; y < board.length; y++) {
+    let spot = board[y][col]
+    if (spot === '') {
+      continue;
+    } else {
+      return y - 1
+    }
+  }
 
+  return 6
 }
