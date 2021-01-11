@@ -14,7 +14,7 @@
 
 **[assumptions]**
 
-- assume wins by column
+- assume wins by row
 - assume the ai is random
 - assume the player will red
 - assume the player moves first
