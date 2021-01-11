@@ -39,10 +39,10 @@ function ai_move() {
     } else {
       board[a][x] = ai_color;
       render_board();
-      const outcome = detect_wlt(board);
+      const outcome = detect_wlt();
 
         if(outcome == 'continue'){
-          ai_turn();
+
         }else{
           alert(outcome);
 
