@@ -71,15 +71,17 @@ function reset() {
     ties =  0
 
     board = [
-    ['', '', '', '', '', ''],
-    ['', '', '', '', '', ''],
-    ['', '', '', '', '', ''],
-    ['', '', '', '', '', ''],
-    ['', '', '', '', '', ''],
-    ['', '', '', '', '', ''],
-    ['', '', '', '', '', '']
+      ['', '', '', '', '', ''],
+      ['', '', '', '', '', ''],
+      ['', '', '', '', '', ''],
+      ['', '', '', '', '', ''],
+      ['', '', '', '', '', ''],
+      ['', '', '', '', '', ''],
+      ['', '', '', '', '', '']
   ]
 
+  render_board()
+  update_score()
 }
 
 /**
@@ -158,7 +160,11 @@ function user_move(x)
 
 
 // Updates the HTML with the new score
-function update_score () {}
+function update_score () {
+  document.getElementById('wins').textContent = 'Wins: ' + wins
+  document.getElementById('loss').textContent = '| Losses: ' + losses
+  document.getElementById('tie').textContent = '| Ties: ' + ties
+}
 
 
 // Checks if a column is full
@@ -179,7 +185,7 @@ function check_col_full (col) {
     }
     else{
         return false
-    }    
+    }
 }
 
 // Get the index of the correct available spot in a specific row
