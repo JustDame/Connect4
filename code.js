@@ -19,7 +19,7 @@ let ties = 0
 // Iterates the board and renders each piece and their associated color
 function render_board() {
     for(let i = 0; i < 7; i++){
-        for(let j = 0; j < 7; j++)
+        for(let j = 0; j < 6; j++)
         {
             let chip = document.getElementById(`chip-${i}-${j}`).style.backgroundColor = board[i][j]
             
@@ -45,6 +45,7 @@ function ai_move() {
           ai_turn();
         }else{
           alert(outcome);
+
 
           switch(outcome){
         case 'loss':
@@ -88,7 +89,33 @@ function reset() {
  * 
  * If 4 is reached, that color wins
  */
-function detect_wlt() {}
+function detect_wlt() {
+  for (let y = 0; y < board.length; y++) {    
+    let row = board[y]
+    let counts = row.reduce((acc, curr) => {
+      if (typeof acc[curr] === 'undefined') {
+        acc[curr] = 1
+        lastColor = curr
+      } else if (lastColor !== curr) {
+        acc[curr] = 0
+      } else {
+        acc[curr]++
+      }
+
+      return acc
+    }, { lastColor: '' })
+
+    if (counts[user_color] === 4) {
+      return 'win'
+    } else if (counts[ai_color] === 4) {
+      return 'loss'
+    } else {
+      continue;
+    }
+  }
+
+  return 'continue'
+}
 
 /**
  * Checks if the row is full, if so notify the user
