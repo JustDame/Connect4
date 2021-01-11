@@ -54,7 +54,7 @@ function ai_move() {
         case 'tie':
             ties++;
             break;
-        case 'wins':
+        case 'win':
             wins++;
             break;
           }
