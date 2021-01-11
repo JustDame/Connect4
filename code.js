@@ -9,7 +9,7 @@ let board = [
   ['', '', '', '', '', ''],
   ['', '', '', '', '', ''],
   ['', '', '', '', '', ''],
-  ['', '', '', '', '', '']
+  ['', '', '', '', '', ''],
 ]
 
 let wins = 0
@@ -112,19 +112,27 @@ function detect_wlt() {
     for (let col = 0; col < row.length; col++) {
       let color = row[col]
 
+      if (col === 5) {
+        lastColor = row[col - 1] 
+      }
+
       if (lastColor === null) {
         lastColor = color;
         count = 1;
       } else if (lastColor === color) {
         count++;
       } else {
-        lastColor = null
-        count = 0;
+        lastColor = color
+        count = 1;
       }
 
-      if ((lastColor === user_color) && count === 4) {
+
+
+      console.log('row', y, 'lastColor', lastColor, 'count', count)
+
+      if ((lastColor === user_color) && count >= 4) {
         return 'win'
-      } else if ((lastColor === ai_color) && count === 4) {
+      } else if ((lastColor === ai_color) && count >= 4) {
         return 'loss'
       } else {
         continue;
