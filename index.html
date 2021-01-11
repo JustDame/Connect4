@@ -18,8 +18,29 @@
         <h1>
             Connect 4
         </h1>
-        
-      <div class="row1 row">
+        <div class="clickRow row">
+            <div id="clickCol_1" class="col m2">
+                <div onclick="user_move(0)"></div>
+            </div>
+            <div id="clickCol_2" class="col m2">
+                <div onclick="user_move(1)"></div>
+            </div>
+            <div id="clickCol_3" class="col m2">
+                <div onclick="user_move(2)"></div>
+            </div>
+            <div id="clickCol_4" class="col m2">
+                <div onclick="user_move(3)"></div>
+            </div>
+            <div id="clickCol_5" class="col m2">
+                <div onclick="user_move(4)"></div>
+            </div>
+            <div id="clickCol_6" class="col m2">
+                <div onclick="user_move(5)"></div>
+            </div>  
+        </div>
+        <div class="board">
+        <div class="row1 row">
+          
         <div id="col_1" class="col m2">
             <div id="chip-0-0"></div>
         </div>
@@ -159,6 +180,7 @@
             <div id="chip-6-5"></div>
         </div>
       </div>
+    </div>
       <div class="rest">
         <button id="reset" class="waves-effect waves-light btn ">Reset</button>
         <div class="wtl">
