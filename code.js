@@ -92,27 +92,43 @@ function reset() {
  * If 4 is reached, that color wins
  */
 function detect_wlt() {
+  // Check if board is full, if so, tie
+  let tie = true
+  for (let i = 0; i < 6 && tie; i++) {
+    if (!check_col_full(i)) {
+      tie = false
+    }
+  }
+
+  if (tie) return 'tie'
+
+  // Check WTL for each player
   for (let y = 0; y < board.length; y++) {    
     let row = board[y]
-    let counts = row.reduce((acc, curr) => {
-      if (typeof acc[curr] === 'undefined') {
-        acc[curr] = 1
-        lastColor = curr
-      } else if (lastColor !== curr) {
-        acc[curr] = 0
+
+    let lastColor = null;
+    let count = 0
+
+    for (let col = 0; col < row.length; col++) {
+      let color = row[col]
+
+      if (lastColor === null) {
+        lastColor = color;
+        count = 1;
+      } else if (lastColor === color) {
+        count++;
       } else {
-        acc[curr]++
+        lastColor = null
+        count = 0;
       }
 
-      return acc
-    }, { lastColor: '' })
-
-    if (counts[user_color] === 4) {
-      return 'win'
-    } else if (counts[ai_color] === 4) {
-      return 'loss'
-    } else {
-      continue;
+      if ((lastColor === user_color) && count === 4) {
+        return 'win'
+      } else if ((lastColor === ai_color) && count === 4) {
+        return 'loss'
+      } else {
+        continue;
+      }
     }
   }
 
