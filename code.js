@@ -58,6 +58,7 @@ function ai_move() {
             wins++;
             break;
           }
+          reset()
           update_score ()
         }
     }
@@ -70,10 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function reset() {
-    wins = 0   
-    losses = 0
-    ties =  0
-
+    
     board = [
       ['', '', '', '', '', ''],
       ['', '', '', '', '', ''],
@@ -130,10 +128,6 @@ function detect_wlt() {
         count = 1;
       }
 
-
-
-      console.log('row', y, 'lastColor', lastColor, 'count', count)
-
       if ((lastColor === user_color) && count >= 4) {
         return 'win'
       } else if ((lastColor === ai_color) && count >= 4) {
@@ -180,6 +174,7 @@ function user_move(x)
             losses++;
             break;
           }
+          reset()
           update_score ()
         }
     } 
