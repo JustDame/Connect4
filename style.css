@@ -63,3 +63,7 @@ h1 {
 .clickRow .col:hover {
   background-color: cornsilk;
 }
+
+.model_trigger .btn {
+  font-size: 20px;
+}
