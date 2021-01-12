@@ -64,6 +64,10 @@ function ai_move() {
 
    
 }
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.modal');
+  var instances = M.Modal.init(elems, {});
+});
 
 function reset() {
     wins = 0   

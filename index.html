@@ -16,6 +16,35 @@
     <!-- content goes here -->
     <div class="container">
       <h1>Connect 4</h1>
+      <div class="model_trigger">
+        <a
+          class="waves-effect waves-light btn modal-trigger btn-large"
+          href="#modal1"
+          >Rules</a
+        >
+      </div>
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <p>
+            Instructions:<br />
+            1. Click the blue "Reset" button below the board on the left to
+            reset the board. You will KEEP your wins, losses, and ties.<br />
+            2. Click on the red "Quit" button below the board on the right to
+            reset the board. You will LOSE your wins, losses, and ties.<br />
+            3. To place a piece, click above the column you want to place your
+            chip in. The closest available spot to the bottom of the board will
+            be taken.<br />
+            4. You are the RED chip.<br />
+            5. You can only win by getting 4 of your chips in a row. Horizontal
+            and diagonal winning is not yet implemented.<br />
+          </p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+            >Close</a
+          >
+        </div>
+      </div>
       <div class="clickRow row">
         <div id="clickCol_1" class="col m2">
           <div onclick="user_move(0)"></div>
@@ -202,8 +231,25 @@
           </button></span
         >
       </div>
+
+      <!-- <div class="rules">
+        <p>
+          Instructions:<br />
+          1. Click the blue "Reset" button below the board on the left to reset
+          the board. You will KEEP your wins, losses, and ties.<br />
+          2. Click on the red "Quit" button below the board on the right to
+          reset the board. You will LOSE your wins, losses, and ties.<br />
+          3. To place a piece, click above the column you want to place your
+          chip in. The closest available spot to the bottom of the board will be
+          taken.<br />
+          4. You are the RED chip.<br />
+          5. You can only win by getting 4 of your chips in a row. Horizontal
+          and diagonal winning is not yet implemented.<br />
+        </p>
+      </div> -->
     </div>
     <!-- include external js files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="code.js"></script>
   </body>
 </html>
