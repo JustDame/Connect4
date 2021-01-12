@@ -58,18 +58,20 @@ function ai_move() {
             wins++;
             break;
           }
+          reset()
           update_score ()
         }
     }
 
    
 }
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.modal');
+  var instances = M.Modal.init(elems, {});
+});
 
 function reset() {
-    wins = 0   
-    losses = 0
-    ties =  0
-
+    
     board = [
       ['', '', '', '', '', ''],
       ['', '', '', '', '', ''],
@@ -172,6 +174,7 @@ function user_move(x)
             losses++;
             break;
           }
+          reset()
           update_score ()
         }
     } 
