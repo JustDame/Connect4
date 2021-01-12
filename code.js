@@ -58,6 +58,7 @@ function ai_move() {
             wins++;
             break;
           }
+          reset()
           update_score ()
         }
     }
@@ -66,10 +67,7 @@ function ai_move() {
 }
 
 function reset() {
-    wins = 0   
-    losses = 0
-    ties =  0
-
+    
     board = [
       ['', '', '', '', '', ''],
       ['', '', '', '', '', ''],
@@ -172,6 +170,7 @@ function user_move(x)
             losses++;
             break;
           }
+          reset()
           update_score ()
         }
     } 
