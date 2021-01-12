@@ -221,3 +221,11 @@ function get_available_space(col){
 
   return 6
 }
+
+function quit(){
+  reset()
+  wins = 0
+  losses = 0
+  ties = 0
+  update_score()
+}
