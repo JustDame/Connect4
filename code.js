@@ -126,10 +126,6 @@ function detect_wlt() {
         count = 1;
       }
 
-
-
-      console.log('row', y, 'lastColor', lastColor, 'count', count)
-
       if ((lastColor === user_color) && count >= 4) {
         return 'win'
       } else if ((lastColor === ai_color) && count >= 4) {
