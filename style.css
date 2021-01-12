@@ -75,3 +75,30 @@ h1 {
 .model_trigger .btn {
   font-size: 20px;
 }
+
+@media only screen and (max-width: 600px) {
+  .board .col {
+    border-width: 5px;
+    height: 60px;
+  }
+  .clickRow .col > div {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: red;
+  }
+
+  [id*="chip-"] {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+  }
+
+  .rest {
+    flex-direction: column;
+  }
+
+  .rest .wtl {
+    font-size: 25px;
+  }
+}
