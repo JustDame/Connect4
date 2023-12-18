@@ -91,7 +91,7 @@ function reset() {
  * The function will iterate over each row
  * and count the simulatenous occurrences of each color.
  * 
- * If 4 is reached, that color wins
+ * If 4 is reached, that color wins.
  */
 function detect_wlt() {
   // Check if board is full, if so, tie
